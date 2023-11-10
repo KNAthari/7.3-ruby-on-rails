@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: "ken", password: "secrets", except: [:index, :show]
+  http_basic_authenticate_with name: "dhh", password: "secrets", except: [:index, :show]
 
   before_action :set_category
   before_action :set_article, only: [:show, :edit, :update, :destroy]
