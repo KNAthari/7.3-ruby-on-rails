@@ -11,6 +11,17 @@
         </ul>
     </header>
 
+    <div class = "sidebar">
+        <div class = "section-categories">
+            <h2 class = "section-title">Categories</h2>
+            <ul>
+            <% @categories.each do |category| %>
+                <li><%= category.name %> has <%= category.articles.count %> articles and more to come! | <em><%= category.description %></em> </li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+
 
     <div class = "page-wrapper">
     </div>

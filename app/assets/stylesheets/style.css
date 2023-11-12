@@ -57,6 +57,29 @@ header ul li .description{
     text-align: justify;
 }
 
+.sidebar .section{
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.sidebar .section-categories ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.sidebar .section-categories ul li{
+    display: block;
+    padding: 15px 0px 15px 5px;
+    border-bottom: 1px solid #e0e0e0;
+
+} 
+
+
+
 .page-wrapper{
     min-height: 100%;
 }
