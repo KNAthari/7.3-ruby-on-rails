@@ -1,11 +1,12 @@
 class CategoriesController < ApplicationController
-    before_action :set_category, only: [:show, :destroy]
+    before_action :set_category, only: [:show, :destroy, :edit, :update]
+    
     def index
       @categories = Category.all
     end
     def show
       # Display category details and associated articles
-      @articles = @category.articles
+      # @articles = @category.articles
     end
     def new
       @category = Category.new

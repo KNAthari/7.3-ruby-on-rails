@@ -14,18 +14,18 @@ If you want a look at my blog in process complete the following:
 
 - Clone the project unto your local machine
 
-* Run 'rails db:migrate' command to migrate in order to run necessary rake tasks (Add articles, categories and descriptions)
+* Run `rails db:migrate` command to migrate in order to run necessary rake tasks (Add articles, categories and descriptions)
 
 * Run server with
 ``` 
-'rails server'
+rails server
 ``` 
 or
 ``` 
-'rails s'
+rails s
 ```
 
-* open your browser and type 'localhost:3000'
+* open your browser and type `localhost:3000`
 
 ## Future features
 
