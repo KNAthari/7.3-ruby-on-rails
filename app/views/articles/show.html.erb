@@ -12,9 +12,16 @@
 </ul>
 <ul>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+<div class="comment-section">
+  <h2>Comments</h2>
+    <div id="category-id" data-category="<%= @category.id %>"> </div>
+    <button id="load-comments" data-article="<%= @article.id %>"> Load Comments </button>
+  <div id="comments">
+  </div>
+  
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+
+</div>
 

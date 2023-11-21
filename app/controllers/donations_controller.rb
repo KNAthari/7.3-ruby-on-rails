@@ -4,9 +4,9 @@ class DonationsController < ApplicationController
   end
 
   def create
-    @donation = Donations.new(donation_params)
+    @donation = Donation.new(donation_params)
 
-    #charge the user's card
+    #charge the user's card (post request)
     charge = Stripe::Charge.create({
       amount: @donation.amount * 100, #convert to cents
       currency: 'usd',
