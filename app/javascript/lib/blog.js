@@ -23,16 +23,21 @@ $(function(){
         const url = `/categories/${categoryId}/articles/${articleId}/comments`;
         console.log($.getJSON(url));
         $.getJSON(url, function(data){
-            console.log(data);
-            for(var i = 0; i < data.length; i++){
-                var comments = "<p>" + data[i]["commenter"] + "</p>";
-                comments += "<p>" + data[i]["body"] + "</p>";
-                console.log(comments);
-                $('#comments').append(comments);
-            };
+            data.forEach(c => {
+                let commenter = `<p><strong>Commenter:</strong>${c.commenter}</p>`;
+                let comment = `<p><strong>Comment:</strong>${c.body}</p>`;
+                const likeButton = "<button class='like-button'>Like</button>"
+                $('#comments').append(commenter, comment, likeButton);
+            });
+
+            $('.like-button').on('click', function(){
+                let = likeCount = parseInt($(this).data('like-count')) || 0;
+                likeCount ++
+                $(this).text(`like ${likeCount}`).data('like-count', likeCount);
+            });
 
             $.fail(function(){
-                alert("Comments failed to load!!!");
+                alert("Comments failed to load!!!", error);
             });
         });
     });

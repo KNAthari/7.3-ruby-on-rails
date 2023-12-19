@@ -1,17 +1,18 @@
 # frozen_string_literal: true
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: "dhh", password: "secrets", except: [:index, :show]
 
   before_action :set_category
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = @category.articles
+    @recent_articles = Article.recent_articles
   end
 
   def show
     # @article = Article.find(params[:id])
+  
   end
 
   def new

@@ -3,6 +3,12 @@ class CategoriesController < ApplicationController
     
     def index
       @categories = Category.all
+      
+      @total_articles_per_category = {}
+
+      @categories.each do |category|
+        @total_articles_per_category[category.name] = category.total_articles
+      end
     end
     def show
       # Display category details and associated articles
