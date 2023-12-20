@@ -5,25 +5,24 @@ class ArticleTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-
   test "should not be able to update without signing in" do
     article = Article.new
     article.save
   end
 
-  test "should not save article with a short body"
+  test "should not save article with a short body" do
     category = Category.create(name: "Sample Category", description: "Category description")
 
     article = Article.new(
       title: "Valid Title",
-      body: "This is a valid body with more thant 10 characters."
+      body: "This is a valid body with more than 10 characters."
     )
 
     assert_not article.save, "Saved the article without a category"
-
   end
 
-  test "Should show five most recent articles"
+  test "Should show five most recent articles" do
+
     article_one = Article.new(
       title: "article one",
       body: "This is the body of our first article."
@@ -57,7 +56,7 @@ class ArticleTest < ActiveSupport::TestCase
 
     recent_articles = Article.recent_articles
 
-    assert_equal [article_five, article_four, article_three, article_two, article_one]
+    assert_equal [article_five, article_four, article_three, article_two, article_one], recent_articles
   end
-    
 end
+

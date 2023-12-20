@@ -77,18 +77,4 @@ Rails.application.configure do
   #devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  #change smtp settings
-  require 'tlsmail'
-  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
-    ActionMailer::Base.delivery_method = :smtp
-     config.action_mailer.perform_deliveries = true
-     config.action_mailer.default :charset => "utf-8"
-       ActionMailer::Base.smtp_settings = {
-       :address              => "smtp.gmail.com",
-       :port                 => 587,
-       :user_name            => "nyangaikenyon@gmail.com",
-       :password             => 'Klop1290',
-       :authentication       => "plain",
-       :enable_starttls_auto => true
-       }
 end

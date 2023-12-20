@@ -29,4 +29,31 @@ class CategoryTest < ActiveSupport::TestCase
 
   assert_equal 3, total_articles
   end
+
+  test 'can create a category' do
+    get "/categories/new"
+    assert_response :success
+
+    post "/categories",
+    params: {category{name: "New Category", description: "This is my new category."}}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+  end
+
+  test 'can see categories' do
+    get "/categories"
+    assert_response :success
+    assert_select "li", "category.name"
+  end
+
+  test 'can edit category' do
+    get "/categories/1/edit"
+    assert_response :success
+
+    patch "/categories/1"
+    params: {category{name: "Technology", description: "Stay up-to-date with the latest in technology."}}
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
 end
