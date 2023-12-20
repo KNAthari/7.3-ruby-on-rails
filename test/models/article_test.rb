@@ -58,5 +58,21 @@ class ArticleTest < ActiveSupport::TestCase
 
     assert_equal [article_five, article_four, article_three, article_two, article_one], recent_articles
   end
+
+  test 'can show article' do
+    get "/categories/1/article/1"
+    assert_response :success
+  end
+
+  test 'can delete article' do
+    get "/categories/1/article/1"
+    assert_response :success
+
+    Delete "/categories/1/article/1"
+    assert_response :redirect
+    follow_redirect!
+    assert_response :success
+  end
+
 end
 
