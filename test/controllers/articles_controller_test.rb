@@ -10,7 +10,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get category_article_path(@category, @article)
+    get category_article_url(@category, @article)
     assert_response :success
   end
 
